@@ -4,15 +4,15 @@
   font-family: var(--fonte-principal);
   border: none;
   border-radius: .5rem;
-  background-color: #0dcedb;
-  color: #004e55;
+  background-color: #ee7330;
+  color: #501c00;
   box-sizing: border-box;
   min-width: 8rem;
 }
 
 .botao:hover, .botao:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #bdf9fd;
+  box-shadow: 0 0 0 2px #ff9f6c;
   transition: .25s;
 }
 
@@ -40,7 +40,7 @@
 
 .input:focus, .input:hover {
   outline: none;
-  box-shadow: 0 0 0 2px #bdf9fd;
+  box-shadow: 0 0 0 2px #ff9f6c;
   background: #fff;
   transition: .25s;
 }
