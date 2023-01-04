@@ -1,0 +1,35 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.nav a,
+.nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfdfdf;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav button:hover,
+.nav button:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #dfdfdf;
+}
+
+.nav a:global(.active) { /* função :global() é exclusiva do css module*/
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #ff9f6c;
+}
+
+.nav a:global(.active) svg > * {
+  fill: #ee7330;
+}
