@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import styles from './UserHeader.module.css'
 
-import UserHeaderNav from './UserHeaderNav'
+import UserHeaderNav from '../UserHeaderNav/UserHeaderNav'
 
 const UserHeader = () => {
   const[titulo, setTitulo] = useState('');
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     if (location.pathname === '/conta') setTitulo('Minha Conta')

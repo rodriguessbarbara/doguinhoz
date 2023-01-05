@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from "./UserPostPhoto.module.css";
 
-import useForm from "../../Hooks/useForm";
-import useFetch from "../../Hooks/useFetch";
-import Input from "../Forms/Input";
-import Button from "../Forms/Button";
-import { Erro } from "../Erro";
+import useForm from "../../../Hooks/useForm";
+import useFetch from "../../../Hooks/useFetch";
+import Input from "../../Forms/Input";
+import Button from "../../Forms/Button";
+import { Erro } from "../../Erro";
 
-import { POST_PHOTO } from "../../api";
+import { POST_PHOTO } from "../../../api";
 
 const UserPostPhoto = () => {
   const nome = useForm();
