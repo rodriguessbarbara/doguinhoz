@@ -1,0 +1,22 @@
+.postPhoto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.imgFile {
+  margin-bottom: 1rem;
+}
+
+.preview {
+  border-radius: 20px;
+  background-position: center center;
+  background-size: cover;
+}
+
+.preview::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
