@@ -51,6 +51,10 @@ a {
   margin: 0 auto;
 }
 
+.containerMain {
+  margin-top: 4rem;
+}
+
 .animarEsquerda {
   opacity: 0;
   transform: translate3d(-20px);
