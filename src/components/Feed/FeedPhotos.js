@@ -12,7 +12,7 @@ const FeedPhotos = () => {
 
   useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = GET_PHOTOS({ page: 1, total: 6, user: 0 });
+      const { url, options } = GET_PHOTOS({ page: 1, total: 10, user: 0 });
       const { response, json } = await request(url, options);
       console.log(json);
     }
