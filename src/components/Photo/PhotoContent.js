@@ -15,7 +15,7 @@ const PhotoContent = ({ data }) => {
 
       <div className={styles.details}>
         <div>
-          <p>
+          <p className={styles.author}>
             <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             <span className={styles.views}>{photo.acessos}</span>
           </p>
@@ -25,11 +25,11 @@ const PhotoContent = ({ data }) => {
 
           <ul className={styles.attributes}>
             <li>{photo.peso} kg</li>
-            <li>{photo.idade > 1 ? 'anos' : 'ano'}</li>
+            <li>{photo.idade > 1 ? `${photo.idade} anos` : `${photo.idade} ano`}</li>
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments}/>
+      <PhotoComments className={styles.comments} id={photo.id} comments={comments}/>
     </div>
   );
 };
