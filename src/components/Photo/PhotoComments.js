@@ -13,11 +13,10 @@ const PhotoComments = (props) => {
       <ul className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
-            <b>{comment.comment_AUTHOR}:</b>
+            <b>{comment.comment_author}:</b>
             <span>{comment.comment_content}</span>
           </li>
         ))}
-        ;
       </ul>
       <div>{login && <CommentsForm id={props.id} setComments={setComments} />}</div>
     </>
