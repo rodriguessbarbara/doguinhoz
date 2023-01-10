@@ -1,14 +1,18 @@
-import React from 'react'
+import React from "react";
 
-import styles from './Photos.module.css';
+import styles from "./Photos.module.css";
 
-const Photos = ({photo}) => {
+const Photos = ({ photo, setModalPhoto }) => {
+  function handleClick() {
+    setModalPhoto(photo);
+  }
+
   return (
-    <li className={styles.photo}>
-      <img src={photo.src} alt={photo.title}/>
+    <li className={styles.photo} onClick={handleClick}>
+      <img src={photo.src} alt={photo.title} />
       <span className={styles.views}>{photo.acessos}</span>
     </li>
-  )
-}
+  );
+};
 
-export default Photos
+export default Photos;

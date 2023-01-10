@@ -5,15 +5,15 @@ import useFetch from "../../Hooks/useFetch";
 import { Erro } from "../Erro";
 import Loading from "../Loading";
 
-import styles from './FeedPhotos.module.css';
+import styles from "./FeedPhotos.module.css";
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, erro, request } = useFetch();
 
   useEffect(() => {
     async function fetchPhotos() {
       const { url, options } = GET_PHOTOS({ page: 1, total: 10, user: 0 });
-      const { response, json } = await request(url, options);
+      const { json } = await request(url, options);
       console.log(json);
     }
 
@@ -26,7 +26,7 @@ const FeedPhotos = () => {
     return (
       <ul className={`${styles.feed} animarEsquerda`}>
         {data.map((photo) => (
-          <Photos key={photo.id} photo={photo}/>
+          <Photos key={photo.id} photo={photo} setModalPhoto={setModalPhoto} />
         ))}
       </ul>
     );
