@@ -1,0 +1,52 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  resize: none;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background: #f0f0f0;
+  transition: 0.25s;
+}
+
+.textarea:hover,
+.textarea:focus {
+  outline: none;
+  border-color: #ff9f6c;
+  background-color: #fff;
+}
+
+.botao {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.botao:hover svg path,
+.botao:focus svg path {
+  fill: #ee7330;
+}
+
+.botao:hover svg g,
+.botao:focus svg g {
+  animation: latir .7s infinite;
+}
+
+@keyframes latir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
