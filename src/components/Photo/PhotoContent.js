@@ -6,12 +6,12 @@ import PhotoComments from "./PhotoComments";
 
 import styles from "./PhotoContent.module.css";
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const { photo, comments } = data;
   const user = useContext(UserContext);
 
   return (
-    <div className={styles.photoContent}>
+    <div className={`${styles.photoContent} ${single ? styles.photoSingle : ''}`}>
       <div className={styles.img}>
         <img src={photo.src} alt={photo.title} />
       </div>
@@ -42,6 +42,7 @@ const PhotoContent = ({ data }) => {
         className={styles.comments}
         id={photo.id}
         comments={comments}
+        single={true}
       />
     </div>
   );

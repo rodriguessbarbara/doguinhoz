@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../../UserContext";
 import CommentsForm from "./CommentsForm";
 
-import styles from './PhotoComments.module.css';
+import styles from "./PhotoComments.module.css";
 
 const PhotoComments = (props) => {
   const { login } = useContext(UserContext);
@@ -10,15 +10,27 @@ const PhotoComments = (props) => {
 
   return (
     <>
-      <ul className={styles.comments}>
+      <ul
+        className={`${styles.comments} ${
+          props.single ? styles.photoSingle : ""
+        }`}
+      >
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
-            <b>{comment.comment_author}:</b>
+            <b>{comment.comment_author}: </b>
             <span>{comment.comment_content}</span>
           </li>
         ))}
       </ul>
-      <div>{login && <CommentsForm id={props.id} setComments={setComments} />}</div>
+      <div>
+        {login && (
+          <CommentsForm
+            single={props.single}
+            id={props.id}
+            setComments={setComments}
+          />
+        )}
+      </div>
     </>
   );
 };
