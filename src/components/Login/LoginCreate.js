@@ -6,6 +6,7 @@ import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import { Erro } from "../Erro";
+import Head from '../Head';
 
 const LoginCreate = () => {
   const username = useForm();
@@ -29,6 +30,8 @@ const LoginCreate = () => {
 
   return (
     <section className="animarEsquerda">
+      <Head title="Criar Conta" description="Página de Login do site Dogs." />
+
       <h1 className="titulo">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuario" type="text" name="username" {...username} />
@@ -38,8 +41,8 @@ const LoginCreate = () => {
           <Button disabled>Cadastrando...</Button>
         ) : (
           <Button>Cadastrar</Button>
-          )}
-          <Erro erro={erro}/>
+        )}
+        <Erro erro={erro} />
       </form>
     </section>
   );

@@ -5,6 +5,8 @@ import useFetch from "../../Hooks/useFetch";
 import { Erro } from "../Erro";
 import Loading from "../Loading";
 import PhotoContent from "./PhotoContent";
+import Head from '../Head';
+
 import styles from "./PhotoContent.module.css";
 
 const Photo = () => {
@@ -21,6 +23,8 @@ const Photo = () => {
   if (data)
     return (
       <section className={`container containerMain ${styles.photo}`}>
+        <Head title={data.photo.title} description="Página do perfil do cachorro." />
+
         <PhotoContent data={data} single={true}/>
       </section>
     );

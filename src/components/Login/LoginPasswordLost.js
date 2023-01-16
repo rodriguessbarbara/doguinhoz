@@ -4,8 +4,8 @@ import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PASSWORD_LOST } from "../../api";
-import Loading from "../Loading";
 import { Erro } from "../Erro";
+import Head from '../Head';
 
 const LoginPasswordLost = () => {
   const login = useForm();
@@ -23,9 +23,10 @@ const LoginPasswordLost = () => {
     }
   }
 
-  // if (data)
   return (
     <section>
+      <Head title="Esqueceu senha" description="Página de Password Lost do site Dogs."/>
+
       <h1 className="titulo">Esqueceu sua senha?</h1>
       {data ? (
         <p style={{color: 'green'}}>{data}</p>

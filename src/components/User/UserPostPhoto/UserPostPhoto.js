@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-
-import styles from "./UserPostPhoto.module.css";
-
 import useForm from "../../../Hooks/useForm";
 import useFetch from "../../../Hooks/useFetch";
 import Input from "../../Forms/Input";
 import Button from "../../Forms/Button";
 import { Erro } from "../../Erro";
-
 import { POST_PHOTO } from "../../../api";
+import Head from '../../Head';
+
+import styles from "./UserPostPhoto.module.css";
 
 const UserPostPhoto = () => {
   const nome = useForm();
@@ -47,6 +46,8 @@ const UserPostPhoto = () => {
 
   return (
     <section className={`${styles.postPhoto} animarEsquerda`}>
+      <Head title="Poste sua foto" description="Página do Feed de Fotos do usuário" />
+
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
