@@ -1,13 +1,35 @@
-import React from 'react'
-import Head from '../../Head';
+import React, { useEffect } from "react";
+import useFetch from "../../../Hooks/useFetch";
+import { GET_STATS } from "../../../api";
+import Loading from "../../Loading";
+import { Erro } from "../../Erro";
+import Head from "../../Head";
+import Graphs from "./Graphs";
 
 const UserStats = () => {
-  return (
-    <div>UserStats
-      <Head title="Estatísticas" description="Página de estatísticas do usuário." />
+  const { data, loading, erro, request } = useFetch();
 
-    </div>
-  )
-}
+  useEffect(() => {
+    async function getData() {
+      const { url, options } = GET_STATS();
+      await request(url, options);
+    }
+    getData();
+  }, [request]);
 
-export default UserStats
+  if (erro) return <Erro erro={erro} />;
+  if (loading) return <Loading />;
+  if (data)
+    return (
+      <div>
+        <Head
+          title="Estatísticas"
+          description="Página de estatísticas do usuário."
+        />
+        <Graphs data={data}/>
+      </div>
+    );
+  else return null;
+};
+
+export default UserStats;
