@@ -17,7 +17,7 @@ const Graphs = ({ data }) => {
     });
 
     setTotal(
-      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
+      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b, 0) 
     );
     setGraph(graphData);
   }, [data]);

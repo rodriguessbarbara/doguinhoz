@@ -10,14 +10,12 @@ const UserStats = () => {
   const { data, loading, erro, request } = useFetch();
 
   useEffect(() => {
-    if (data) {
-      async function getData() {
-        const { url, options } = GET_STATS();
-        await request(url, options);
-      }
-      getData();
+    async function getData() {
+      const { url, options } = GET_STATS();
+      await request(url, options);
     }
-  }, [data, request]);
+    getData();
+  }, [request]);
 
   if (erro) return <Erro erro={erro} />;
   if (loading) return <Loading />;
